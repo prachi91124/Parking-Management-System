@@ -14,11 +14,15 @@ if (dotenv.error) {
 //To connect to MongoDB
 connectDB();
 
+app.use(express.json());
+app.use(cors());
+
 //error Handling Middleware
 app.use(errorHandler);
 
 //routes
 app.use('/api',require("./routes/userRoutes"));
+
 const port = 6000;
 app.listen(port, () => {
     console.log(`Booting on http://localhost:${port}`);
