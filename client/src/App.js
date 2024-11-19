@@ -18,7 +18,7 @@ function App() {
      <Login />
      <ParkingSpace />
      <SignUp />
-     {/* <Wallet /> */}
+     <Wallet />
     </div>
   );
 }
