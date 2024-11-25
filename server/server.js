@@ -7,8 +7,9 @@ const errorHandler = require("./middleware/errorHandler");
 const cors = require("cors");
 
 //if .env file is not accesible
-if (dotenv.error) {
-    console.error("Error loading .env file", dotenv.error);
+if (!process.env.CONNECTION_STRING) {
+    console.error("Error: .env file is not accessible or missing variables");
+    process.exit(1); // Exit the app
 }
 
 //To connect to MongoDB
@@ -20,10 +21,14 @@ app.use(cors());
 //error Handling Middleware
 app.use(errorHandler);
 
-//routes
-app.use('/api',require("./routes/userRoutes"));
+//get route
+app.get("/api/register",(req,res)=>{
+    res.status(200).send("Welcome to TVA")
+})
+//register route
+app.use("/api/user",require("./routes/userRoutes"));
 
-const port = 6000;
+const port = 8000;
 app.listen(port, () => {
     console.log(`Booting on http://localhost:${port}`);
 });
