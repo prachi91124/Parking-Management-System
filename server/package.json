@@ -12,12 +12,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.1.1",
+=======
+>>>>>>> 2e47a2ba05df21828ac5353a0cbb28b01287f5fd
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-async-handler": "^1.2.0",
+<<<<<<< HEAD
     "jsonwebtoken": "^9.0.2",
+=======
+>>>>>>> 2e47a2ba05df21828ac5353a0cbb28b01287f5fd
     "mongoose": "^8.8.2"
   },
   "devDependencies": {
